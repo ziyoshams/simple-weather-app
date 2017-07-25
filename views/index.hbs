@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="css/main.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simple Weather App</title>
+</head>
+
+<body>
+  <div class="container">
+    {{> form}}
+    <div class="container__weather">
+      <h3>{{city}}</h3>
+      <h3>Latitude: {{lat}}</h3>
+      <h3>Longitude: {{lng}}</h3>
+      <h3>Current Temperature: <strong>{{temperature}} F</strong></h3>
+      <h3>Wind: {{wind}} ml/hr</h3>
+      <h3 class="container__weather__summary">{{summary}}</h3>
+    </div>
+  </div>
+
+  <div class="image">
+    <img src="{{url}}" alt="{{summary}}">
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,171 @@
+body,html{
+  width:100%;
+  height:100%;
+  padding: 0;
+  margin: 0;
+}
+
+
+header{
+  height: 100%;
+  width: 100%;
+  background: url('../images/Artboard.svg');
+  background-repeat: no-repeat;
+  background-size: auto;
+  margin: 0 auto;
+}
+
+
+@media only screen and (max-width: 499px){
+
+  .container{
+    font-family: sans-serif;
+    font-weight: 300;
+    text-align: center;
+    color: #fff;
+    width:100%;
+    padding: 20px 20px;
+    background: rgba(0, 0, 0, 0.5);
+    box-sizing: border-box;
+    z-index: 10;
+  }
+
+  .container__weather h3{
+    font-weight: 100;
+  }
+
+  .container__search{
+    position: absolute;
+    bottom: 40px;
+    left: 0;
+    width: 100%;
+    padding: 0;
+    z-index: 1;
+  }
+
+  .container__search input[type=text]{
+    height: 50px;
+    width: 80%;
+    outline: none;
+    border: none;
+    text-indent: 15px;
+    font-size: 1.1rem;
+    font-weight: 300;
+    font-family: sans-serif;
+    box-sizing: border-box;
+  }
+
+  .container__search input[type=submit]{
+    width: 18%;
+    height: 50px;
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 300;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background: #1abc9c;
+    box-sizing: border-box;
+  }
+
+  .image img{
+    position: fixed;
+    top:0;
+    left: 0;
+    height: 100vh;
+    z-index: -10;
+  }
+}
+
+
+@media only screen and (min-width: 500px) {
+  .image{
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    z-index: 0;
+  }
+  .wrapper{
+    width: 100%;
+    height: 100px;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+
+  }
+  .container{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: sans-serif;
+    font-weight: 300;
+    color: #fff;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5);
+    width:500px;
+    height: auto;
+    padding: 50px;
+    box-sizing: border-box;
+    z-index: 10;
+  }
+
+  .container__weather{
+    flex: 1;
+    width: 100%;
+  }
+
+  .container__weather h3{
+    font-weight: 100;
+  }
+
+  .container__search{
+    flex: 1;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    min-width: 300px;
+    height: 50px;
+  }
+
+  .container__search input[type=text]{
+    height: 50px;
+    width: 80%;
+    min-width: 200px;
+    outline: none;
+    border: none;
+    text-indent: 15px;
+    font-size: 1.2rem;
+    font-weight: 300;
+    font-family: sans-serif;
+    box-sizing: border-box;
+
+  }
+
+  .container__search input[type=submit]{
+    width: 15%;
+    height: 50px;
+    min-width: 70px;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 300;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background: #1abc9c;
+    padding: 3px 10px;
+    box-sizing: border-box;
+
+  }
+  .image img{
+    position: fixed;
+    top:0;
+    left: 0;
+    height: 100vh;
+    z-index: -10;
+  }
+}
