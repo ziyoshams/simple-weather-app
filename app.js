@@ -8,7 +8,7 @@ var bodyParser = require('body-parser');
 
 var urlencodedParser = bodyParser.urlencoded({ extended: false })
 
-var port = process.env.PORT || 3001;
+var port = process.env.PORT || 3000;
 var app = express();
 app.use(express.static(__dirname + '/public'));
 hbs.registerPartials(__dirname+ "/views/partials");
@@ -71,4 +71,4 @@ app.post('/search', urlencodedParser, (req, res) =>{
   }
 });
 
-app.listen(8080);
+app.listen(port);
