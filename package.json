@@ -1,12 +1,12 @@
 {
   "name": "weather-app",
   "version": "1.0.0",
-  "description": "",
+  "description": "Simple weather application which uses Google API to get location information and Dark Sky API to get weather information. Also pixels photo API is used to get a background image",
   "main": "index.js",
   "scripts": {
     "start": "node app.js"
   },
-  "author": "",
+  "author": "Ziyovuddin Shamsiddini",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.17.1",

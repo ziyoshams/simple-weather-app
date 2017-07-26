@@ -1,16 +1,12 @@
-var axios   = require('axios');
 var express = require('express');
 var hbs     = require('hbs');
 var request = require('request');
 var geocode = require('./modules/geocode.js');
 var weather = require('./modules/weather.js');
 var getPhoto = require('./modules/pixels.js');
-//var flickr = require('./modules/flickr.js');
 var bodyParser = require('body-parser');
 
 var urlencodedParser = bodyParser.urlencoded({ extended: false })
-
-
 
 var port = process.env.PORT || 3000;
 var app = express();
@@ -18,14 +14,10 @@ app.use(express.static(__dirname + '/public'));
 hbs.registerPartials(__dirname+ "/views/partials");
 app.set('view engine', 'hbs');
 
-
 var address = '';
 var lat, lng, temper, city, summary, windSpeed;
 
-
-
 app.get('/', function(req, res){
-  console.log('--> main.hbs');
     res.render('main.hbs');
 });
 
@@ -60,7 +52,6 @@ function getData(address, res){
     })
     .then(function(result){
       res.redirect('/results');
-
       showPage(address, result);
     })
     .catch(function(){
@@ -80,6 +71,4 @@ app.post('/search', urlencodedParser, (req, res) =>{
   }
 });
 
-app.listen(port, function(){
-  console.log(`Server is running on port ${port}`);
-});
+app.listen(port);
