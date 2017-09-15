@@ -21,9 +21,9 @@ var geocodeAddress = function(address){
       }else if(body.status === "OK"){
         console.log('Gettig location details.');
         resolve({
-          city: body.results[0].formatted_address,
+          city:     body.results[0].formatted_address,
           latitude: body.results[0].geometry.location.lat,
-          longitude: body.results[0].geometry.location.lng
+          longitude:body.results[0].geometry.location.lng
         });
       }
     });
