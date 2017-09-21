@@ -11,8 +11,8 @@ var urlencodedParser = bodyParser.urlencoded({ extended: false })
 var port = process.env.PORT || 3000;
 var app = express();
 app.use(express.static(__dirname + '/public'));
-hbs.registerPartials(__dirname + "/views/partials");
 app.set('view engine', 'hbs');
+hbs.registerPartials(__dirname + "/views/partials");
 
 var address = '';
 var lat, lng, temper, city, summary, windSpeed;
@@ -71,4 +71,6 @@ app.post('/search', urlencodedParser, (req, res) =>{
   }
 });
 
-app.listen(port);
+app.listen(port, function (){
+  console.log(`Running on port ${port}`);
+});
