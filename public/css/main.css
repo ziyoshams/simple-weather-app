@@ -78,7 +78,7 @@ video{
     box-sizing: border-box;
   }
 
-  .container__search input[type=submit]{
+  .container__search .button{
     flex:1;
     height: 50px;
     color: #fff;
@@ -161,7 +161,7 @@ video{
 
   }
 
-  .container__search input[type=submit]{
+  .container__search .button{
     flex:1;
     height: 50px;
     min-width: 70px;
