@@ -11,7 +11,7 @@ var urlencodedParser = bodyParser.urlencoded({ extended: false })
 var port = process.env.PORT || 3000;
 var app = express();
 app.use(express.static(__dirname + '/public'));
-hbs.registerPartials(__dirname+ "/views/partials");
+hbs.registerPartials(__dirname + "/views/partials");
 app.set('view engine', 'hbs');
 
 var address = '';
@@ -49,14 +49,14 @@ function getData(address, res){
         windSpeed = result.windSpeed;
         summary = result.summary;
         return getPhoto.getBackground(summary);
-    })
-    .then(function(result){
-      res.redirect('/results');
-      showPage(address, result);
-    })
-    .catch(function(){
-      res.redirect('/');
-    });
+      })
+      .then(function(result){
+        res.redirect('/results');
+        showPage(address, result);
+      })
+      .catch(function(){
+        res.redirect('/');
+      });
   }
 
 }

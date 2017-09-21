@@ -10,7 +10,7 @@ var getWeather = function(lat, lng){
       if(!error){
         console.log('Getting weather info');
         resolve({
-          temperature: body.currently.temperature,
+          temperature: Math.ceil(body.currently.temperature),
           windSpeed: body.currently.windSpeed,
           summary: body.currently.summary
         });
