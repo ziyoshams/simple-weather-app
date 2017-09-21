@@ -6,6 +6,9 @@
   "scripts": {
     "start": "node app.js"
   },
+  "engines": {
+    "node": "7.10.0"
+  },
   "author": "Ziyovuddin Shamsiddini",
   "license": "ISC",
   "dependencies": {
