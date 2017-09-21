@@ -71,11 +71,15 @@ video{
     height: 50px;
     outline: none;
     border: none;
+    border-radius: 0;
     text-indent: 15px;
     font-size: 1.1rem;
     font-weight: 300;
     font-family: sans-serif;
     box-sizing: border-box;
+    margin-bottom: 3px;
+    appearance: none;
+    -webkit-appearance: none;
   }
 
   .container__search .button{
@@ -142,13 +146,13 @@ video{
     margin: auto;
     display: flex;
     justify-content: center;
-    width: 100%;
+    width: 75%;
     min-width: 300px;
     height: 50px;
   }
 
   .container__search input[type=text]{
-    height: 50px;
+    height: 100px;
     flex:3;
     min-width: 200px;
     outline: none;
@@ -158,12 +162,12 @@ video{
     font-weight: 300;
     font-family: sans-serif;
     box-sizing: border-box;
-
+    border-bottom-left-radius: 50px;
   }
 
   .container__search .button{
     flex:1;
-    height: 50px;
+    height: 100px;
     min-width: 70px;
     color: white;
     font-size: 1.1rem;
@@ -174,7 +178,7 @@ video{
     background: #1abc9c;
     padding: 3px 10px;
     box-sizing: border-box;
-
+    border-bottom-right-radius: 50px;
   }
   .image img{
     position: fixed;
