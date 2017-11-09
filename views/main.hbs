@@ -1,22 +1,25 @@
 <!DOCTYPE html>
 <html>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="css/main.css">
-<title>Simple Weather App</title>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/main.css">
+  <title>Simple Weather App</title>
+</head>
 <body>
   <header>
     <div class="wrapper">
       {{> form}}
     </div>
-
   </header>
-  <div class="video-bg">
-    <video autoplay loop poster="images/Orange-Ripple.jpg">
-      <source src="images/Orange-Ripple.mp4" type="video/mp4">
-      <source src="images/Orange-Ripple.webm" type="video/webm">
-    </video>
+  <div class="main-background">
+    <picture>
+      <source media="(min-width: 40em)" srcset="images/turtle-large.png">
+      <source srcset="images/turtle-small.png">
+      <img src="images/turtle-small.png" alt="">
+    </picture>
   </div>
+
 
 </body>
 </html>

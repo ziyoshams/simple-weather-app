@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="css/main.css">
-<title>Simple Weather App</title>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/main.css">
+  <title>Simple Weather App</title>
+</head>
 <body>
   <div class="container">
     {{> form}}
@@ -20,5 +22,11 @@
   <div class="image">
     <img src="{{url}}" alt="{{summary}}">
   </div>
+  <script>
+  window.onload = function(){
+      document.getElementById("form").classList.add("move-up");
+  };
+
+  </script>
 </body>
 </html>
