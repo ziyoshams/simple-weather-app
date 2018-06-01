@@ -52,6 +52,15 @@ export const getData = positions => {
           console.log;
           let { apparentTemperature, windSpeed, icon } = data.data.currently;
           let { daily } = data.data;
+          let sanitizedDaily = daily.data.map(elem => {
+            return {
+              day: new Date(elem.time * 1000).toDateString(),
+              icon: elem.icon,
+              windSpeed: elem.windSpeed,
+              tempHigh: elem.apparentTemperatureHigh,
+              tempLow: elem.apparentTemperatureLow
+            };
+          });
           dispatch(
             gotData({
               currently: {
@@ -59,7 +68,7 @@ export const getData = positions => {
                 windSpeed,
                 icon
               },
-              daily: daily.data
+              daily: sanitizedDaily
             })
           );
         }

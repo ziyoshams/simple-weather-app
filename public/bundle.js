@@ -2483,13 +2483,22 @@ var getData = exports.getData = function getData(positions) {
             icon = _data$data$currently.icon;
         var daily = data.data.daily;
 
+        var sanitizedDaily = daily.data.map(function (elem) {
+          return {
+            day: new Date(elem.time * 1000).toDateString(),
+            icon: elem.icon,
+            windSpeed: elem.windSpeed,
+            tempHigh: elem.apparentTemperatureHigh,
+            tempLow: elem.apparentTemperatureLow
+          };
+        });
         dispatch(gotData({
           currently: {
             temperature: Math.floor(apparentTemperature),
             windSpeed: windSpeed,
             icon: icon
           },
-          daily: daily.data
+          daily: sanitizedDaily
         }));
       }
     }).catch(function (err) {
@@ -23349,34 +23358,44 @@ var _react2 = _interopRequireDefault(_react);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var Days = function Days() {
+var Days = function Days(props) {
+  console.log(props.info);
   return _react2.default.createElement(
     "div",
     { className: "days" },
-    [1, 2, 3, 4, 5, 6, 7].map(function (el) {
-      return _react2.default.createElement(Day, { key: el });
+    props.info.map(function (el) {
+      return _react2.default.createElement(Day, { info: el, key: el.day });
     })
   );
 };
 
-var Day = function Day() {
+var Day = function Day(props) {
+  var _props$info = props.info,
+      day = _props$info.day,
+      icon = _props$info.icon,
+      windSpeed = _props$info.windSpeed,
+      tempHigh = _props$info.tempHigh,
+      tempLow = _props$info.tempLow;
+
+  var today = day.split(' ').shift();
+  console.log(today);
   return _react2.default.createElement(
     "div",
     { className: "days-of-week" },
     _react2.default.createElement(
       "span",
       { className: "day" },
-      "Mon"
+      today
     ),
     _react2.default.createElement(
       "span",
       { className: "icon" },
-      "i"
+      _react2.default.createElement("img", { src: "/images/icons/" + icon + ".svg", alt: icon })
     ),
     _react2.default.createElement(
       "span",
       { className: "future-temperature" },
-      "76"
+      Math.ceil(tempHigh)
     )
   );
 };

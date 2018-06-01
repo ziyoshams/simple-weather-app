@@ -1,19 +1,23 @@
 import React, { Component } from "react";
 
-const Days = () => {
+const Days = (props) => {
+  console.log(props.info);
   return (
     <div className="days">
-      {[1,2,3,4,5,6,7].map((el) => <Day key={el}/>)}
+      {props.info.map((el) => <Day info={el} key={el.day}/>)}
     </div>
   );
 };
 
-const Day = () => {
+const Day = (props) => {
+  const { day, icon, windSpeed, tempHigh, tempLow } = props.info;
+  const today = day.split(' ').shift();
+  console.log(today);
   return (
     <div className="days-of-week">
-      <span className="day">Mon</span>
-      <span className="icon">i</span>
-      <span className="future-temperature">76</span>
+      <span className="day">{today}</span>
+      <span className="icon"><img src={`/images/icons/${icon}.svg`} alt={icon}/></span>
+      <span className="future-temperature">{Math.ceil(tempHigh)}</span>
     </div>
   );
 };
