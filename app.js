@@ -1,76 +1,31 @@
-var express = require('express');
-var hbs     = require('hbs');
-var request = require('request');
-var geocode = require('./modules/geocode.js');
-var weather = require('./modules/weather.js');
-var getPhoto = require('./modules/pixels.js');
-var bodyParser = require('body-parser');
+const express = require("express");
+const geocode = require("./modules/geocode.js");
+const weather = require("./modules/weather.js");
+const getPhoto = require("./modules/pixels.js");
+const bodyParser = require("body-parser");
 
-var urlencodedParser = bodyParser.urlencoded({ extended: false })
+const port = process.env.PORT || 3000;
 
-var port = process.env.PORT || 3000;
-var app = express();
-app.use(express.static(__dirname + '/public'));
-app.set('view engine', 'hbs');
-hbs.registerPartials(__dirname + "/views/partials");
+const app = express();
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(express.static(__dirname + "/public"));
 
-var address = '';
-var lat, lng, temper, city, summary, windSpeed;
-
-app.get('/', function(req, res){
-    res.render('main.hbs');
+app.get("/", (req, res, next) => {
+  res.sendFile(__dirname + "public/index.html");
 });
 
-function showPage(addr, result){
-  app.get('/results', function(requ, resp){
-    resp.render('index.hbs', {
-      lat: lat,
-      lng: lng,
-      city: city,
-      temperature: temper,
-      wind: windSpeed,
-      summary: summary,
-      url: result.url
+app.get("/api/weather/:lat/:lon", (req, res, next) => {
+  let { lat, lon } = req.params;
+  weather(lat, lon)
+    .then(response => response.data)
+    .then(data => {
+      res.json(data);
+    })
+    .catch(err => {
+      console.log(err);
     });
-  });
-}
-
-function getData(address, res){
-  if(address != ''){
-    geocode.geocodeAddress(address)
-      .then(function(result){
-        lat = result.latitude;
-        lng = result.longitude;
-        city = result.city;
-        return weather.getWeather(result.latitude, result.longitude);
-      })
-      .then(function(result){
-        temper = result.temperature;
-        windSpeed = result.windSpeed;
-        summary = result.summary;
-        return getPhoto.getBackground(summary);
-      })
-      .then(function(result){
-        res.redirect('/results');
-        showPage(address, result);
-      })
-      .catch(function(){
-        res.redirect('/');
-      });
-  }
-
-}
-
-app.post('/search', urlencodedParser, (req, res) =>{
-  address = req.body.address;
-  if (address != '') {
-    getData(address, res);
-  }
-  else{
-    res.redirect('/');
-  }
 });
 
-app.listen(port, function (){
+app.listen(port, function() {
   console.log(`Running on port ${port}`);
 });

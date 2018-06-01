@@ -1,30 +1,8 @@
-var request = require('request');
+var axios = require('axios');
 require('dotenv').load();
 
 var getWeather = function(lat, lng){
-  return new Promise(function(resolve, reject){
-    request({
-      url: `https://api.darksky.net/forecast/`+ process.env.WEATHER_KEY +`/${lat},${lng}`,
-      json: true
-    }, function(error, response, body){
-      if(!error){
-        console.log('Getting weather info');
-        resolve({
-          temperature: Math.ceil(body.currently.temperature),
-          windSpeed: body.currently.windSpeed,
-          summary: body.currently.summary
-        });
+  return axios.get(`https://api.darksky.net/forecast/`+ process.env.WEATHER_KEY +`/${lat},${lng}?exclude=flags,hourly,minutely`);
+}
 
-      }else{
-        reject({
-          temperature: 0,
-          windSpeed: 0,
-          summary: 0
-        });
-      }
-    });
-  });
-
-};
-
-module.exports.getWeather = getWeather;
+module.exports = getWeather;
