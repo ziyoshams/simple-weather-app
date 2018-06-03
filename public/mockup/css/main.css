@@ -3,7 +3,7 @@ html {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 .container {
@@ -30,7 +30,7 @@ html {
   width: 100%;
   display: flex;
   color: #fff;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: flex-start;
   background: rgba(170, 7, 235, 0.1); /* Old browsers */
   background: -moz-linear-gradient(
@@ -50,7 +50,63 @@ html {
     rgba(170, 7, 235, 0.7) 0%,
     rgba(184, 142, 242, 0.5) 67%,
     rgba(83, 225, 241, 0.5) 100%
-  ); 
+  );
+}
+
+.info,
+.input-field {
+  display: flex;
+}
+
+.info {
+  height: 50%;
+  width: 100%;
+}
+
+.input-field {
+  width: 60%;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  border-radius: 50px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  /* transform: rotateX(90deg) */
+}
+
+.input-field input[type="text"] {
+  flex: 4;
+  height: 60px;
+  width: 60%;
+  font-size: 1.5rem;
+  color: #fff;
+  font-weight: 100;
+  letter-spacing: 0.15rem;
+  text-indent: 2rem;
+  background: #3333338a;
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+  border: none;
+  outline: none;
+}
+
+.input-field button {
+  width: 100px;
+  font-size: 1.5rem;
+  color: #fff;
+  background: #353538;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.fa-search {
+  transition: transform 0.3s ease-in-out;
+}
+
+.input-field button:hover .fa-search {
+  transform: rotate(15deg) scale(1.1);
 }
 
 .temperature,
@@ -126,8 +182,10 @@ html {
 /* DAYS SECTION END */
 
 @media only screen and (max-width: 375px) {
-  .main {
+  .info {
     flex-direction: column;
+    justify-content: space-between;
+    height: 80%;
   }
 
   .day,
@@ -145,39 +203,78 @@ html {
     margin-top: 0;
   }
 
-  .switch{
+  .switch {
     padding: 0;
+  }
 
+  .input-field {
+    height: 50px;
+    width: 95%;
+    display: flex;
+    box-shadow: none;
+    /* transform: rotateX(90deg) */
+  }
+
+  .input-field input[type="text"] {
+    flex: 5;
+    height: 50px;
+    font-size: 1rem;
+    text-indent: 1rem;
+    border: none;
+    padding: 0;
+  }
+
+  .input-field button {
+    flex: 1;
+    font-size: 1rem;
+    height: 50px;
+    box-sizing: border-box;
+ 
   }
 }
-
 
 /*  TOGGLE SWITCH FROM PROTO.IO  */
 .onoffswitch {
   margin: 0 auto;
-  position: relative; width: 70px;
-  -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+  position: relative;
+  width: 70px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 }
 .onoffswitch-checkbox {
   display: none;
 }
 .onoffswitch-label {
-  display: block; overflow: hidden; cursor: pointer;
-  border: 1px solid #FFFFFF; border-radius: 20px;
+  display: block;
+  overflow: hidden;
+  cursor: pointer;
+  border: 1px solid #ffffff;
+  border-radius: 20px;
 }
 .onoffswitch-inner {
-  display: block; width: 200%; margin-left: -100%;
+  display: block;
+  width: 200%;
+  margin-left: -100%;
   transition: margin 0.3s ease-in 0s;
 }
-.onoffswitch-inner:before, .onoffswitch-inner:after {
-  display: block; float: left; width: 50%; height: 30px; padding: 0; line-height: 30px;
-  font-size: 14px; color: white; font-weight: bold;
+.onoffswitch-inner:before,
+.onoffswitch-inner:after {
+  display: block;
+  float: left;
+  width: 50%;
+  height: 30px;
+  padding: 0;
+  line-height: 30px;
+  font-size: 14px;
+  color: white;
+  font-weight: bold;
   box-sizing: border-box;
 }
 .onoffswitch-inner:before {
   content: "\2103";
-  color: #FFFFFF;
-  padding-left: 10px; 
+  color: #ffffff;
+  padding-left: 10px;
   text-align: left;
 }
 .onoffswitch-inner:after {
@@ -186,16 +283,21 @@ html {
   text-align: right;
 }
 .onoffswitch-switch {
-  display: block; width: 18px; margin: 6px;
-  background: #FFFFFF;
-  position: absolute; top: 0; bottom: 0;
+  display: block;
+  width: 18px;
+  margin: 6px;
+  background: #ffffff;
+  position: absolute;
+  top: 0;
+  bottom: 0;
   right: 36px;
-  border: 2px solid #FFFFFF; border-radius: 20px;
-  transition: all 0.3s ease-in 0s; 
+  border: 2px solid #ffffff;
+  border-radius: 20px;
+  transition: all 0.3s ease-in 0s;
 }
 .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
   margin-left: 0;
 }
 .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
-  right: 0px; 
+  right: 0px;
 }

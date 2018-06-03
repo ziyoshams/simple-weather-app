@@ -8,7 +8,8 @@
   <title>Simple Weather App</title>
   <link rel="stylesheet" href="./css/main.css">
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+    crossorigin="anonymous">
 </head>
 
 <body>
@@ -18,30 +19,38 @@
       <img id="image" src="https://images.unsplash.com/photo-1489517456831-3994100a43bd?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=a31684ae035e64a810b9ec10ff9f6b8a&w=1000&q=80"
         alt="">
 
-      <div class="temperature">
-        <h1>15&#176; </h1>
-        <p>
-          <span>Sunny /</span>
-          <span>3 mph</span>
-        </p>
-      </div>
-
-      <div class="today">
-        <p>Thursday, 31st December</p>
-        <h1>
-          <span>icon</span>
-          <span>New York</span>
-        </h1>
-      </div>
-
-      <div class="switch">
-        <div class="onoffswitch">
-          <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked>
-          <label class="onoffswitch-label" for="myonoffswitch">
-            <span class="onoffswitch-inner"></span>
-            <span class="onoffswitch-switch"></span>
-          </label>
+      <div class="info">
+        <div class="temperature">
+          <h1>15&#176; </h1>
+          <p>
+            <span>Sunny /</span>
+            <span>3 mph</span>
+          </p>
         </div>
+
+        <div class="today">
+          <p>Thursday, 31st December</p>
+          <h1>
+            <span>icon</span>
+            <span>New York</span>
+          </h1>
+        </div>
+
+        <div class="switch">
+          <div class="onoffswitch">
+            <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked>
+            <label class="onoffswitch-label" for="myonoffswitch">
+              <span class="onoffswitch-inner"></span>
+              <span class="onoffswitch-switch"></span>
+            </label>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="input-field">
+        <input type="text" />
+        <button type="submit"><i class="fas fa-search"></i></button>
       </div>
 
     </div>

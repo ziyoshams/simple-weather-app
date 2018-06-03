@@ -958,41 +958,6 @@ module.exports = ReactPropTypesSecret;
 
 /***/ }),
 /* 10 */
-/***/ (function(module, exports, __webpack_require__) {
-
-/* WEBPACK VAR INJECTION */(function(process) {/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
-
-if (process.env.NODE_ENV !== 'production') {
-  var REACT_ELEMENT_TYPE = (typeof Symbol === 'function' &&
-    Symbol.for &&
-    Symbol.for('react.element')) ||
-    0xeac7;
-
-  var isValidElement = function(object) {
-    return typeof object === 'object' &&
-      object !== null &&
-      object.$$typeof === REACT_ELEMENT_TYPE;
-  };
-
-  // By explicitly using `prop-types` you are opting into new development behavior.
-  // http://fb.me/prop-types-in-prod
-  var throwOnDirectAccess = true;
-  module.exports = __webpack_require__(44)(isValidElement, throwOnDirectAccess);
-} else {
-  // By explicitly using `prop-types` you are opting into new production behavior.
-  // http://fb.me/prop-types-in-prod
-  module.exports = __webpack_require__(45)();
-}
-
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
-
-/***/ }),
-/* 11 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1020,7 +985,7 @@ function warning(message) {
 }
 
 /***/ }),
-/* 12 */
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1124,7 +1089,7 @@ module.exports = defaults;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 13 */
+/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1163,7 +1128,7 @@ var ExecutionEnvironment = {
 module.exports = ExecutionEnvironment;
 
 /***/ }),
-/* 14 */
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1205,7 +1170,7 @@ function getActiveElement(doc) /*?DOMElement*/{
 module.exports = getActiveElement;
 
 /***/ }),
-/* 15 */
+/* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1276,7 +1241,7 @@ function shallowEqual(objA, objB) {
 module.exports = shallowEqual;
 
 /***/ }),
-/* 16 */
+/* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1319,7 +1284,7 @@ function containsNode(outerNode, innerNode) {
 module.exports = containsNode;
 
 /***/ }),
-/* 17 */
+/* 16 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1338,13 +1303,48 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 /***/ }),
+/* 17 */
+/***/ (function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function(process) {/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+if (process.env.NODE_ENV !== 'production') {
+  var REACT_ELEMENT_TYPE = (typeof Symbol === 'function' &&
+    Symbol.for &&
+    Symbol.for('react.element')) ||
+    0xeac7;
+
+  var isValidElement = function(object) {
+    return typeof object === 'object' &&
+      object !== null &&
+      object.$$typeof === REACT_ELEMENT_TYPE;
+  };
+
+  // By explicitly using `prop-types` you are opting into new development behavior.
+  // http://fb.me/prop-types-in-prod
+  var throwOnDirectAccess = true;
+  module.exports = __webpack_require__(44)(isValidElement, throwOnDirectAccess);
+} else {
+  // By explicitly using `prop-types` you are opting into new production behavior.
+  // http://fb.me/prop-types-in-prod
+  module.exports = __webpack_require__(45)();
+}
+
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+
+/***/ }),
 /* 18 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return subscriptionShape; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return storeShape; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_prop_types__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_prop_types__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_prop_types__);
 
 
@@ -2382,7 +2382,7 @@ function wrapMapToPropsFunc(mapToProps, methodName) {
 "use strict";
 /* harmony export (immutable) */ __webpack_exports__["a"] = verifyPlainObject;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_lodash_es_isPlainObject__ = __webpack_require__(55);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__warning__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__warning__ = __webpack_require__(10);
 
 
 
@@ -2416,7 +2416,7 @@ var Symbol = __WEBPACK_IMPORTED_MODULE_0__root_js__["a" /* default */].Symbol;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.getData = exports.toggleTemperature = undefined;
+exports.getPlace = exports.updatePlaceState = exports.findCity = exports.getData = exports.toggleTemperature = undefined;
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
@@ -2430,6 +2430,14 @@ var _axios = __webpack_require__(74);
 
 var _axios2 = _interopRequireDefault(_axios);
 
+var _reduxLogger = __webpack_require__(93);
+
+var _reduxLogger2 = _interopRequireDefault(_reduxLogger);
+
+var _geocode = __webpack_require__(95);
+
+var _geocode2 = _interopRequireDefault(_geocode);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var initState = {
@@ -2438,14 +2446,18 @@ var initState = {
   currently: {
     temperature: 0,
     windSpeed: 0,
-    icon: ""
+    icon: "",
+    summary: ""
   },
-  daily: []
+  daily: [],
+  searchPlace: ""
 };
 
 var FETCH_WEATHER = "FETCH_WEATHER";
 var CHANGE_TEMPERATURE_C = "CHANGE_TEMPERATURE_C";
 var CHANGE_TEMPERATURE_F = "FHANGE_TEMPERATURE_F";
+var PLACE_TO_SEARCH = "PLACE_TO_SEARCH";
+var SET_CITY = "SET_CITY";
 
 var gotData = function gotData(data) {
   return {
@@ -2468,7 +2480,7 @@ var changeTemperature = function changeTemperature(flag) {
 
 var toggleTemperature = exports.toggleTemperature = function toggleTemperature(flag) {
   return function (dispatch) {
-    if (flag) dispatch(changeTemperature(flag));else dispatch(changeTemperature(flag));
+    flag ? dispatch(changeTemperature(flag)) : dispatch(changeTemperature(flag));
   };
 };
 
@@ -2476,33 +2488,89 @@ var getData = exports.getData = function getData(positions) {
   return function (dispatch) {
     _axios2.default.get("/api/weather/" + positions.lat + "/" + positions.lon).then(function (data) {
       if (data.status === 200) {
-        console.log;
         var _data$data$currently = data.data.currently,
             apparentTemperature = _data$data$currently.apparentTemperature,
             windSpeed = _data$data$currently.windSpeed,
-            icon = _data$data$currently.icon;
+            icon = _data$data$currently.icon,
+            summary = _data$data$currently.summary;
         var daily = data.data.daily;
 
         var sanitizedDaily = daily.data.map(function (elem) {
           return {
-            day: new Date(elem.time * 1000).toDateString(),
+            day: new Date(elem.time * 1000).toDateString().split(" ").shift(), // Take only Sat, Sun, Mon ...
             icon: elem.icon,
             windSpeed: elem.windSpeed,
             tempHigh: elem.apparentTemperatureHigh,
             tempLow: elem.apparentTemperatureLow
           };
         });
+        sanitizedDaily.pop(); // Remove the last day
         dispatch(gotData({
           currently: {
             temperature: Math.floor(apparentTemperature),
             windSpeed: windSpeed,
-            icon: icon
+            icon: icon,
+            summary: summary
           },
           daily: sanitizedDaily
         }));
       }
     }).catch(function (err) {
       console.log(err.message);
+    });
+  };
+};
+
+// SEARCH ACTION CREATORS
+
+var gotPlace = function gotPlace(place) {
+  return {
+    type: PLACE_TO_SEARCH,
+    place: place
+  };
+};
+
+var setCity = function setCity(city) {
+  return {
+    type: SET_CITY,
+    city: city
+  };
+};
+
+var findCity = exports.findCity = function findCity(positions) {
+  return function (dispatch) {
+    var result = _axios2.default.get("http://maps.googleapis.com/maps/api/geocode/json?latlng=" + positions.lat + "," + positions.lon);
+    result.then(function (response) {
+      if (response.data.status === 'OK') {
+        var city = response.data.results[0].address_components.filter(function (elem) {
+          return elem.types.includes('sublocality_level_1');
+        });
+        console.log(city[0]);
+        if (city[0]) dispatch(setCity(city[0].long_name));
+      }
+    });
+  };
+};
+
+var updatePlaceState = exports.updatePlaceState = function updatePlaceState(place) {
+  return function (dispatch) {
+    dispatch(gotPlace(place));
+  };
+};
+
+var getPlace = exports.getPlace = function getPlace(place) {
+  return function (dispatch) {
+    var result = (0, _geocode2.default)(place);
+    result.then(function (response) {
+      if (response.data.status === 'OK') {
+        var city = response.data.results[0].formatted_address;
+        var _response$data$result = response.data.results[0].geometry.location,
+            lat = _response$data$result.lat,
+            lng = _response$data$result.lng;
+
+        dispatch(setCity(city));
+        dispatch(getData({ lat: lat, lon: lng }));
+      }
     });
   };
 };
@@ -2524,6 +2592,12 @@ var reducer = function reducer() {
       return _extends({}, state, {
         currently: _extends({}, state.currently, {
           temperature: Math.floor((state.currently.temperature - 32) * (5 / 9))
+        }),
+        daily: state.daily.map(function (day) {
+          return _extends({}, day, {
+            tempHigh: Math.floor((day.tempHigh - 32) * (5 / 9)),
+            tempLow: Math.floor((day.tempLow - 32) * (5 / 9))
+          });
         })
       });
       break;
@@ -2532,15 +2606,31 @@ var reducer = function reducer() {
       return _extends({}, state, {
         currently: _extends({}, state.currently, {
           temperature: Math.ceil(state.currently.temperature * (9 / 5) + 32)
+        }),
+        daily: state.daily.map(function (day) {
+          return _extends({}, day, {
+            tempHigh: Math.ceil(day.tempHigh * (9 / 5) + 32),
+            tempLow: Math.ceil(day.tempLow * (9 / 5) + 32)
+          });
         })
       });
       break;
+
+    case PLACE_TO_SEARCH:
+      return _extends({}, state, {
+        searchPlace: action.place
+      });
+
+    case SET_CITY:
+      return _extends({}, state, {
+        city: action.city
+      });
     default:
       return state;
   }
 };
 
-var store = (0, _redux.createStore)(reducer, (0, _redux.applyMiddleware)(_reduxThunk2.default));
+var store = (0, _redux.createStore)(reducer, (0, _redux.applyMiddleware)(_reduxThunk2.default, _reduxLogger2.default));
 
 exports.default = store;
 
@@ -2830,7 +2920,7 @@ var _reactDom = __webpack_require__(34);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
-var _reactRedux = __webpack_require__(17);
+var _reactRedux = __webpack_require__(16);
 
 var _App = __webpack_require__(68);
 
@@ -4387,7 +4477,7 @@ if (process.env.NODE_ENV === 'production') {
 /*
  Modernizr 3.0.0pre (Custom Build) | MIT
 */
-var ba=__webpack_require__(3),ea=__webpack_require__(2),m=__webpack_require__(13),A=__webpack_require__(5),C=__webpack_require__(4),fa=__webpack_require__(14),ha=__webpack_require__(15),ja=__webpack_require__(16),ka=__webpack_require__(6);
+var ba=__webpack_require__(3),ea=__webpack_require__(2),m=__webpack_require__(12),A=__webpack_require__(5),C=__webpack_require__(4),fa=__webpack_require__(13),ha=__webpack_require__(14),ja=__webpack_require__(15),ka=__webpack_require__(6);
 function D(a){for(var b=arguments.length-1,c="http://reactjs.org/docs/error-decoder.html?invariant\x3d"+a,d=0;d<b;d++)c+="\x26args[]\x3d"+encodeURIComponent(arguments[d+1]);ba(!1,"Minified React error #"+a+"; visit %s for the full message or use the non-minified dev environment for full errors and additional helpful warnings. ",c)}ea?void 0:D("227");
 function ma(a,b,c,d,e,f,h,g,k){this._hasCaughtError=!1;this._caughtError=null;var v=Array.prototype.slice.call(arguments,3);try{b.apply(c,v)}catch(l){this._caughtError=l,this._hasCaughtError=!0}}
 var E={_caughtError:null,_hasCaughtError:!1,_rethrowError:null,_hasRethrowError:!1,invokeGuardedCallback:function(a,b,c,d,e,f,h,g,k){ma.apply(E,arguments)},invokeGuardedCallbackAndCatchFirstError:function(a,b,c,d,e,f,h,g,k){E.invokeGuardedCallback.apply(this,arguments);if(E.hasCaughtError()){var v=E.clearCaughtError();E._hasRethrowError||(E._hasRethrowError=!0,E._rethrowError=v)}},rethrowCaughtError:function(){return na.apply(E,arguments)},hasCaughtError:function(){return E._hasCaughtError},clearCaughtError:function(){if(E._hasCaughtError){var a=
@@ -4704,13 +4794,13 @@ if (process.env.NODE_ENV !== "production") {
 var invariant = __webpack_require__(3);
 var React = __webpack_require__(2);
 var warning = __webpack_require__(7);
-var ExecutionEnvironment = __webpack_require__(13);
+var ExecutionEnvironment = __webpack_require__(12);
 var _assign = __webpack_require__(5);
 var emptyFunction = __webpack_require__(4);
 var checkPropTypes = __webpack_require__(8);
-var getActiveElement = __webpack_require__(14);
-var shallowEqual = __webpack_require__(15);
-var containsNode = __webpack_require__(16);
+var getActiveElement = __webpack_require__(13);
+var shallowEqual = __webpack_require__(14);
+var containsNode = __webpack_require__(15);
 var emptyObject = __webpack_require__(6);
 var hyphenateStyleName = __webpack_require__(39);
 var camelizeStyleName = __webpack_require__(41);
@@ -21505,10 +21595,10 @@ module.exports = camelize;
 /* WEBPACK VAR INJECTION */(function(process) {/* harmony export (immutable) */ __webpack_exports__["a"] = createProvider;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_prop_types__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__utils_PropTypes__ = __webpack_require__(18);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__utils_warning__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__utils_warning__ = __webpack_require__(10);
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
@@ -23191,7 +23281,7 @@ function finalPropsSelectorFactory(dispatch, _ref2) {
 
 "use strict";
 /* harmony export (immutable) */ __webpack_exports__["a"] = verifySubselectors;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_warning__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_warning__ = __webpack_require__(10);
 
 
 function verify(selector, methodName, displayName) {
@@ -23227,7 +23317,7 @@ var _react = __webpack_require__(2);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactRedux = __webpack_require__(17);
+var _reactRedux = __webpack_require__(16);
 
 var _Days = __webpack_require__(69);
 
@@ -23245,7 +23335,15 @@ var _SwitchToggle = __webpack_require__(72);
 
 var _SwitchToggle2 = _interopRequireDefault(_SwitchToggle);
 
+var _Search = __webpack_require__(94);
+
+var _Search2 = _interopRequireDefault(_Search);
+
 var _store = __webpack_require__(25);
+
+var _geocode = __webpack_require__(95);
+
+var _geocode2 = _interopRequireDefault(_geocode);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -23265,21 +23363,23 @@ var App = function (_Component) {
 
     _this.handlePosition = _this.handlePosition.bind(_this);
     _this.handleSwitch = _this.handleSwitch.bind(_this);
-    _this.handleLocation = _this.handleLocation.bind(_this);
+    _this.handleLocationSearch = _this.handleLocationSearch.bind(_this);
     return _this;
   }
 
   _createClass(App, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      navigator.geolocation.getCurrentPosition(this.handlePosition);
+      navigator.geolocation.getCurrentPosition(this.handlePosition, this.handleLocationSearch);
     }
   }, {
     key: "handlePosition",
     value: function handlePosition(position) {
+      console.log(position);
       var lat = position.coords.latitude;
       var lon = position.coords.longitude;
       this.props.updatePositions({ lat: lat, lon: lon });
+      this.props.findCity({ lat: lat, lon: lon });
     }
   }, {
     key: "handleSwitch",
@@ -23291,8 +23391,11 @@ var App = function (_Component) {
       }
     }
   }, {
-    key: "handleLocation",
-    value: function handleLocation() {}
+    key: "handleLocationSearch",
+    value: function handleLocationSearch() {
+      var search = document.getElementById('search-input');
+      search.classList.add('visible');
+    }
   }, {
     key: "render",
     value: function render() {
@@ -23307,9 +23410,14 @@ var App = function (_Component) {
             src: "https://images.unsplash.com/photo-1489517456831-3994100a43bd?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=a31684ae035e64a810b9ec10ff9f6b8a&w=1000&q=80",
             alt: ""
           }),
-          _react2.default.createElement(_Temperature2.default, { info: this.props.currently }),
-          _react2.default.createElement(_Today2.default, { info: this.props.currently }),
-          _react2.default.createElement(_SwitchToggle2.default, { toggle: this.handleSwitch })
+          _react2.default.createElement(
+            "div",
+            { className: "info" },
+            _react2.default.createElement(_Temperature2.default, { info: this.props.currently }),
+            _react2.default.createElement(_Today2.default, { info: this.props.currently }),
+            _react2.default.createElement(_SwitchToggle2.default, { toggle: this.handleSwitch })
+          ),
+          _react2.default.createElement(_Search2.default, null)
         ),
         _react2.default.createElement(_Days2.default, { info: this.props.daily })
       );
@@ -23335,6 +23443,9 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
     },
     toggleTemperature: function toggleTemperature(flag) {
       return dispatch((0, _store.toggleTemperature)(flag));
+    },
+    findCity: function findCity(positions) {
+      return dispatch((0, _store.findCity)(positions));
     }
   };
 };
@@ -23359,7 +23470,6 @@ var _react2 = _interopRequireDefault(_react);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Days = function Days(props) {
-  console.log(props.info);
   return _react2.default.createElement(
     "div",
     { className: "days" },
@@ -23377,15 +23487,14 @@ var Day = function Day(props) {
       tempHigh = _props$info.tempHigh,
       tempLow = _props$info.tempLow;
 
-  var today = day.split(' ').shift();
-  console.log(today);
+  var today = new Date().toDateString().split(' ').shift();
   return _react2.default.createElement(
     "div",
-    { className: "days-of-week" },
+    { className: "days-of-week animated slideInUp" },
     _react2.default.createElement(
       "span",
       { className: "day" },
-      today
+      day
     ),
     _react2.default.createElement(
       "span",
@@ -23420,7 +23529,6 @@ var _react2 = _interopRequireDefault(_react);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Temperature = function Temperature(props) {
-  console.log(props.info);
   return _react2.default.createElement(
     "div",
     { className: "temperature" },
@@ -23436,8 +23544,8 @@ var Temperature = function Temperature(props) {
       _react2.default.createElement(
         "span",
         null,
-        props.info.icon,
-        " /"
+        props.info.summary,
+        " / "
       ),
       _react2.default.createElement(
         "span",
@@ -23462,43 +23570,71 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
 var _react = __webpack_require__(2);
 
 var _react2 = _interopRequireDefault(_react);
 
+var _reactRedux = __webpack_require__(16);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var Today = function Today() {
-  return _react2.default.createElement(
-    "div",
-    { className: "today" },
-    _react2.default.createElement(
-      "p",
-      null,
-      new Date().toDateString()
-    ),
-    _react2.default.createElement(
-      "h1",
-      null,
-      _react2.default.createElement(
-        "span",
-        null,
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Today = function (_Component) {
+  _inherits(Today, _Component);
+
+  function Today() {
+    _classCallCheck(this, Today);
+
+    return _possibleConstructorReturn(this, (Today.__proto__ || Object.getPrototypeOf(Today)).call(this));
+  }
+
+  _createClass(Today, [{
+    key: "render",
+    value: function render() {
+      return _react2.default.createElement(
+        "div",
+        { className: "today" },
         _react2.default.createElement(
-          "i",
-          { className: "material-icons" },
-          "location_on"
+          "p",
+          null,
+          new Date().toDateString()
+        ),
+        _react2.default.createElement(
+          "h1",
+          null,
+          _react2.default.createElement(
+            "span",
+            null,
+            _react2.default.createElement("i", { className: "fas fa-map-marker" })
+          ),
+          _react2.default.createElement(
+            "span",
+            null,
+            " ",
+            this.props.city
+          )
         )
-      ),
-      _react2.default.createElement(
-        "span",
-        null,
-        "New York"
-      )
-    )
-  );
+      );
+    }
+  }]);
+
+  return Today;
+}(_react.Component);
+
+var mapStateToProps = function mapStateToProps(state) {
+  return {
+    city: state.city
+  };
 };
 
-exports.default = Today;
+exports.default = (0, _reactRedux.connect)(mapStateToProps)(Today);
 
 /***/ }),
 /* 72 */
@@ -23586,7 +23722,7 @@ module.exports = __webpack_require__(75);
 var utils = __webpack_require__(1);
 var bind = __webpack_require__(26);
 var Axios = __webpack_require__(77);
-var defaults = __webpack_require__(12);
+var defaults = __webpack_require__(11);
 
 /**
  * Create an instance of Axios
@@ -23669,7 +23805,7 @@ function isSlowBuffer (obj) {
 "use strict";
 
 
-var defaults = __webpack_require__(12);
+var defaults = __webpack_require__(11);
 var utils = __webpack_require__(1);
 var InterceptorManager = __webpack_require__(86);
 var dispatchRequest = __webpack_require__(87);
@@ -24208,7 +24344,7 @@ module.exports = InterceptorManager;
 var utils = __webpack_require__(1);
 var transformData = __webpack_require__(88);
 var isCancel = __webpack_require__(29);
-var defaults = __webpack_require__(12);
+var defaults = __webpack_require__(11);
 var isAbsoluteURL = __webpack_require__(89);
 var combineURLs = __webpack_require__(90);
 
@@ -24456,6 +24592,119 @@ module.exports = function spread(callback) {
     return callback.apply(null, arr);
   };
 };
+
+
+/***/ }),
+/* 93 */
+/***/ (function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function(global) {!function(e,t){ true?t(exports):"function"==typeof define&&define.amd?define(["exports"],t):t(e.reduxLogger=e.reduxLogger||{})}(this,function(e){"use strict";function t(e,t){e.super_=t,e.prototype=Object.create(t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}})}function r(e,t){Object.defineProperty(this,"kind",{value:e,enumerable:!0}),t&&t.length&&Object.defineProperty(this,"path",{value:t,enumerable:!0})}function n(e,t,r){n.super_.call(this,"E",e),Object.defineProperty(this,"lhs",{value:t,enumerable:!0}),Object.defineProperty(this,"rhs",{value:r,enumerable:!0})}function o(e,t){o.super_.call(this,"N",e),Object.defineProperty(this,"rhs",{value:t,enumerable:!0})}function i(e,t){i.super_.call(this,"D",e),Object.defineProperty(this,"lhs",{value:t,enumerable:!0})}function a(e,t,r){a.super_.call(this,"A",e),Object.defineProperty(this,"index",{value:t,enumerable:!0}),Object.defineProperty(this,"item",{value:r,enumerable:!0})}function f(e,t,r){var n=e.slice((r||t)+1||e.length);return e.length=t<0?e.length+t:t,e.push.apply(e,n),e}function u(e){var t="undefined"==typeof e?"undefined":N(e);return"object"!==t?t:e===Math?"math":null===e?"null":Array.isArray(e)?"array":"[object Date]"===Object.prototype.toString.call(e)?"date":"function"==typeof e.toString&&/^\/.*\//.test(e.toString())?"regexp":"object"}function l(e,t,r,c,s,d,p){s=s||[],p=p||[];var g=s.slice(0);if("undefined"!=typeof d){if(c){if("function"==typeof c&&c(g,d))return;if("object"===("undefined"==typeof c?"undefined":N(c))){if(c.prefilter&&c.prefilter(g,d))return;if(c.normalize){var h=c.normalize(g,d,e,t);h&&(e=h[0],t=h[1])}}}g.push(d)}"regexp"===u(e)&&"regexp"===u(t)&&(e=e.toString(),t=t.toString());var y="undefined"==typeof e?"undefined":N(e),v="undefined"==typeof t?"undefined":N(t),b="undefined"!==y||p&&p[p.length-1].lhs&&p[p.length-1].lhs.hasOwnProperty(d),m="undefined"!==v||p&&p[p.length-1].rhs&&p[p.length-1].rhs.hasOwnProperty(d);if(!b&&m)r(new o(g,t));else if(!m&&b)r(new i(g,e));else if(u(e)!==u(t))r(new n(g,e,t));else if("date"===u(e)&&e-t!==0)r(new n(g,e,t));else if("object"===y&&null!==e&&null!==t)if(p.filter(function(t){return t.lhs===e}).length)e!==t&&r(new n(g,e,t));else{if(p.push({lhs:e,rhs:t}),Array.isArray(e)){var w;e.length;for(w=0;w<e.length;w++)w>=t.length?r(new a(g,w,new i(void 0,e[w]))):l(e[w],t[w],r,c,g,w,p);for(;w<t.length;)r(new a(g,w,new o(void 0,t[w++])))}else{var x=Object.keys(e),S=Object.keys(t);x.forEach(function(n,o){var i=S.indexOf(n);i>=0?(l(e[n],t[n],r,c,g,n,p),S=f(S,i)):l(e[n],void 0,r,c,g,n,p)}),S.forEach(function(e){l(void 0,t[e],r,c,g,e,p)})}p.length=p.length-1}else e!==t&&("number"===y&&isNaN(e)&&isNaN(t)||r(new n(g,e,t)))}function c(e,t,r,n){return n=n||[],l(e,t,function(e){e&&n.push(e)},r),n.length?n:void 0}function s(e,t,r){if(r.path&&r.path.length){var n,o=e[t],i=r.path.length-1;for(n=0;n<i;n++)o=o[r.path[n]];switch(r.kind){case"A":s(o[r.path[n]],r.index,r.item);break;case"D":delete o[r.path[n]];break;case"E":case"N":o[r.path[n]]=r.rhs}}else switch(r.kind){case"A":s(e[t],r.index,r.item);break;case"D":e=f(e,t);break;case"E":case"N":e[t]=r.rhs}return e}function d(e,t,r){if(e&&t&&r&&r.kind){for(var n=e,o=-1,i=r.path?r.path.length-1:0;++o<i;)"undefined"==typeof n[r.path[o]]&&(n[r.path[o]]="number"==typeof r.path[o]?[]:{}),n=n[r.path[o]];switch(r.kind){case"A":s(r.path?n[r.path[o]]:n,r.index,r.item);break;case"D":delete n[r.path[o]];break;case"E":case"N":n[r.path[o]]=r.rhs}}}function p(e,t,r){if(r.path&&r.path.length){var n,o=e[t],i=r.path.length-1;for(n=0;n<i;n++)o=o[r.path[n]];switch(r.kind){case"A":p(o[r.path[n]],r.index,r.item);break;case"D":o[r.path[n]]=r.lhs;break;case"E":o[r.path[n]]=r.lhs;break;case"N":delete o[r.path[n]]}}else switch(r.kind){case"A":p(e[t],r.index,r.item);break;case"D":e[t]=r.lhs;break;case"E":e[t]=r.lhs;break;case"N":e=f(e,t)}return e}function g(e,t,r){if(e&&t&&r&&r.kind){var n,o,i=e;for(o=r.path.length-1,n=0;n<o;n++)"undefined"==typeof i[r.path[n]]&&(i[r.path[n]]={}),i=i[r.path[n]];switch(r.kind){case"A":p(i[r.path[n]],r.index,r.item);break;case"D":i[r.path[n]]=r.lhs;break;case"E":i[r.path[n]]=r.lhs;break;case"N":delete i[r.path[n]]}}}function h(e,t,r){if(e&&t){var n=function(n){r&&!r(e,t,n)||d(e,t,n)};l(e,t,n)}}function y(e){return"color: "+F[e].color+"; font-weight: bold"}function v(e){var t=e.kind,r=e.path,n=e.lhs,o=e.rhs,i=e.index,a=e.item;switch(t){case"E":return[r.join("."),n,"→",o];case"N":return[r.join("."),o];case"D":return[r.join(".")];case"A":return[r.join(".")+"["+i+"]",a];default:return[]}}function b(e,t,r,n){var o=c(e,t);try{n?r.groupCollapsed("diff"):r.group("diff")}catch(e){r.log("diff")}o?o.forEach(function(e){var t=e.kind,n=v(e);r.log.apply(r,["%c "+F[t].text,y(t)].concat(P(n)))}):r.log("—— no diff ——");try{r.groupEnd()}catch(e){r.log("—— diff end —— ")}}function m(e,t,r,n){switch("undefined"==typeof e?"undefined":N(e)){case"object":return"function"==typeof e[n]?e[n].apply(e,P(r)):e[n];case"function":return e(t);default:return e}}function w(e){var t=e.timestamp,r=e.duration;return function(e,n,o){var i=["action"];return i.push("%c"+String(e.type)),t&&i.push("%c@ "+n),r&&i.push("%c(in "+o.toFixed(2)+" ms)"),i.join(" ")}}function x(e,t){var r=t.logger,n=t.actionTransformer,o=t.titleFormatter,i=void 0===o?w(t):o,a=t.collapsed,f=t.colors,u=t.level,l=t.diff,c="undefined"==typeof t.titleFormatter;e.forEach(function(o,s){var d=o.started,p=o.startedTime,g=o.action,h=o.prevState,y=o.error,v=o.took,w=o.nextState,x=e[s+1];x&&(w=x.prevState,v=x.started-d);var S=n(g),k="function"==typeof a?a(function(){return w},g,o):a,j=D(p),E=f.title?"color: "+f.title(S)+";":"",A=["color: gray; font-weight: lighter;"];A.push(E),t.timestamp&&A.push("color: gray; font-weight: lighter;"),t.duration&&A.push("color: gray; font-weight: lighter;");var O=i(S,j,v);try{k?f.title&&c?r.groupCollapsed.apply(r,["%c "+O].concat(A)):r.groupCollapsed(O):f.title&&c?r.group.apply(r,["%c "+O].concat(A)):r.group(O)}catch(e){r.log(O)}var N=m(u,S,[h],"prevState"),P=m(u,S,[S],"action"),C=m(u,S,[y,h],"error"),F=m(u,S,[w],"nextState");if(N)if(f.prevState){var L="color: "+f.prevState(h)+"; font-weight: bold";r[N]("%c prev state",L,h)}else r[N]("prev state",h);if(P)if(f.action){var T="color: "+f.action(S)+"; font-weight: bold";r[P]("%c action    ",T,S)}else r[P]("action    ",S);if(y&&C)if(f.error){var M="color: "+f.error(y,h)+"; font-weight: bold;";r[C]("%c error     ",M,y)}else r[C]("error     ",y);if(F)if(f.nextState){var _="color: "+f.nextState(w)+"; font-weight: bold";r[F]("%c next state",_,w)}else r[F]("next state",w);l&&b(h,w,r,k);try{r.groupEnd()}catch(e){r.log("—— log end ——")}})}function S(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{},t=Object.assign({},L,e),r=t.logger,n=t.stateTransformer,o=t.errorTransformer,i=t.predicate,a=t.logErrors,f=t.diffPredicate;if("undefined"==typeof r)return function(){return function(e){return function(t){return e(t)}}};if(e.getState&&e.dispatch)return console.error("[redux-logger] redux-logger not installed. Make sure to pass logger instance as middleware:\n// Logger with default options\nimport { logger } from 'redux-logger'\nconst store = createStore(\n  reducer,\n  applyMiddleware(logger)\n)\n// Or you can create your own logger with custom options http://bit.ly/redux-logger-options\nimport createLogger from 'redux-logger'\nconst logger = createLogger({\n  // ...options\n});\nconst store = createStore(\n  reducer,\n  applyMiddleware(logger)\n)\n"),function(){return function(e){return function(t){return e(t)}}};var u=[];return function(e){var r=e.getState;return function(e){return function(l){if("function"==typeof i&&!i(r,l))return e(l);var c={};u.push(c),c.started=O.now(),c.startedTime=new Date,c.prevState=n(r()),c.action=l;var s=void 0;if(a)try{s=e(l)}catch(e){c.error=o(e)}else s=e(l);c.took=O.now()-c.started,c.nextState=n(r());var d=t.diff&&"function"==typeof f?f(r,l):t.diff;if(x(u,Object.assign({},t,{diff:d})),u.length=0,c.error)throw c.error;return s}}}}var k,j,E=function(e,t){return new Array(t+1).join(e)},A=function(e,t){return E("0",t-e.toString().length)+e},D=function(e){return A(e.getHours(),2)+":"+A(e.getMinutes(),2)+":"+A(e.getSeconds(),2)+"."+A(e.getMilliseconds(),3)},O="undefined"!=typeof performance&&null!==performance&&"function"==typeof performance.now?performance:Date,N="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},P=function(e){if(Array.isArray(e)){for(var t=0,r=Array(e.length);t<e.length;t++)r[t]=e[t];return r}return Array.from(e)},C=[];k="object"===("undefined"==typeof global?"undefined":N(global))&&global?global:"undefined"!=typeof window?window:{},j=k.DeepDiff,j&&C.push(function(){"undefined"!=typeof j&&k.DeepDiff===c&&(k.DeepDiff=j,j=void 0)}),t(n,r),t(o,r),t(i,r),t(a,r),Object.defineProperties(c,{diff:{value:c,enumerable:!0},observableDiff:{value:l,enumerable:!0},applyDiff:{value:h,enumerable:!0},applyChange:{value:d,enumerable:!0},revertChange:{value:g,enumerable:!0},isConflict:{value:function(){return"undefined"!=typeof j},enumerable:!0},noConflict:{value:function(){return C&&(C.forEach(function(e){e()}),C=null),c},enumerable:!0}});var F={E:{color:"#2196F3",text:"CHANGED:"},N:{color:"#4CAF50",text:"ADDED:"},D:{color:"#F44336",text:"DELETED:"},A:{color:"#2196F3",text:"ARRAY:"}},L={level:"log",logger:console,logErrors:!0,collapsed:void 0,predicate:void 0,duration:!1,timestamp:!0,stateTransformer:function(e){return e},actionTransformer:function(e){return e},errorTransformer:function(e){return e},colors:{title:function(){return"inherit"},prevState:function(){return"#9E9E9E"},action:function(){return"#03A9F4"},nextState:function(){return"#4CAF50"},error:function(){return"#F20404"}},diff:!1,diffPredicate:void 0,transformer:void 0},T=function(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{},t=e.dispatch,r=e.getState;return"function"==typeof t||"function"==typeof r?S()({dispatch:t,getState:r}):void console.error("\n[redux-logger v3] BREAKING CHANGE\n[redux-logger v3] Since 3.0.0 redux-logger exports by default logger with default settings.\n[redux-logger v3] Change\n[redux-logger v3] import createLogger from 'redux-logger'\n[redux-logger v3] to\n[redux-logger v3] import { createLogger } from 'redux-logger'\n")};e.defaults=L,e.createLogger=S,e.logger=T,e.default=T,Object.defineProperty(e,"__esModule",{value:!0})});
+
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(21)))
+
+/***/ }),
+/* 94 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(2);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRedux = __webpack_require__(16);
+
+var _store = __webpack_require__(25);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Search = function (_Component) {
+  _inherits(Search, _Component);
+
+  function Search() {
+    _classCallCheck(this, Search);
+
+    var _this = _possibleConstructorReturn(this, (Search.__proto__ || Object.getPrototypeOf(Search)).call(this));
+
+    _this.handleChange = _this.handleChange.bind(_this);
+    _this.handleLocationSearch = _this.handleLocationSearch.bind(_this);
+    return _this;
+  }
+
+  _createClass(Search, [{
+    key: "handleLocationSearch",
+    value: function handleLocationSearch(evt) {
+      evt.preventDefault();
+      this.props.search(this.props.place);
+    }
+  }, {
+    key: "handleChange",
+    value: function handleChange(evt) {
+      this.props.update(evt.target.value);
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      return _react2.default.createElement(
+        "form",
+        { id: "search-input", className: "input-field", onSubmit: this.handleLocationSearch },
+        _react2.default.createElement("input", { type: "text", name: "place", value: this.props.place, onChange: this.handleChange }),
+        _react2.default.createElement(
+          "button",
+          { type: "submit" },
+          _react2.default.createElement("i", { className: "fas fa-search" })
+        )
+      );
+    }
+  }]);
+
+  return Search;
+}(_react.Component);
+
+var mapStateToProps = function mapStateToProps(state) {
+  return {
+    place: state.searchPlace
+  };
+};
+
+var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+  return {
+    search: function search(place) {
+      return dispatch((0, _store.getPlace)(place));
+    },
+    update: function update(value) {
+      return dispatch((0, _store.updatePlaceState)(value));
+    }
+  };
+};
+
+exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(Search);
+
+/***/ }),
+/* 95 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var axios = __webpack_require__(74);
+
+var geocodeAddress = function(address){
+  var encodedAddress = encodeURIComponent(address);
+  return axios.get(`http://maps.googleapis.com/maps/api/geocode/json?address=${encodedAddress}`);  
+}
+
+module.exports = geocodeAddress;
 
 
 /***/ })
